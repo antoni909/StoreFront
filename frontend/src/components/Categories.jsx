@@ -1,31 +1,34 @@
 import Products from './Products'
-import { useSelector, useDispatch } from 'react-redux'
-import { setActiveCategory, selectCategories } from '../features/categories/categorySlice'
+import { 
+  useSelector, 
+  useDispatch } from 'react-redux'
+import { setProductList } from '../features/products/productsSlice'
+import { 
+  setActiveCategory, 
+  selectCategories } from '../features/categories/categorySlice'
 
 function Categories() {
 const categories = useSelector(selectCategories)
 const dispatch = useDispatch()
-// can use addToCategoryList to add new categories if need to
-// can use setActiveCategory to set clicked category as active category
+
   return (
     <div >
       <h1>Categories Component</h1>
-      <>
-        <div>
-          current active: {categories && categories.activeCategory}
-        </div>
-        category list: {categories && categories.categoryList.map( (cat,idx) => (
-
+      <div>
+        category list: {categories && categories.categoryList.map( (cat) => (
             <ul>
               <li 
-                key={idx}
-                onClick={()=> dispatch(setActiveCategory(cat))}
-              >{cat}
+                key={cat._id}
+                onClick={()=> {
+                  dispatch(setActiveCategory(cat.name))
+                  dispatch(setProductList(cat.name))
+                }}
+              >
+              {cat.name}
               </li>
             </ul>
-
         ))}
-      </>
+      </div>
       <p>dispatch action when item clicked</p>
       <Products />
     </div>
