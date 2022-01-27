@@ -1,8 +1,17 @@
+import { useStyles } from "../hooks/useStyles";
+import Container from '@material-ui/core/Container';
 
 function Footer() {
+  const classes = useStyles()
+
   return (
     <div >
-      <h1>Footer Component</h1>
+      <Container 
+        maxWidth="lg" 
+        component="footer" 
+        className={classes.footer}
+      >Footer
+      </Container>
     </div>
   );
 }

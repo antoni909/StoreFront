@@ -5,6 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   value: 0,
 }
+
 // reducer functions th at recieve action from dispatch()
 export const counterSlice = createSlice({
   name: 'counter',
@@ -21,4 +22,3 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions
 // exports the reducer function
 export const selectCount = (state) => state.counter.value
 export default counterSlice.reducer
-

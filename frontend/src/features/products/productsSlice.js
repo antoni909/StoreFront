@@ -1,9 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { v4 as uuidv4 } from 'uuid'
 
- 
-
-// const list = [electronics,alcohol,automotive]
 const list = {
   electronics: [
     {_id: uuidv4(),
