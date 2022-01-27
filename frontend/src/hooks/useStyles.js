@@ -11,6 +11,19 @@ export const useStyles = makeStyles((theme) => ({
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
+  button: {
+    fontSize: 15,
+    borderRadius: 10,
+    boxShadow: '1px 1px 1px 1px rgba(30, 203, 243, .3)',
+    '&:hover':{
+      backgroundColor: '#f50057'
+    },
+    marginTop: '10px', 
+  },
+  card: {
+    margin: '10px 10px 10px 10px',
+    paddingBottom: '10px',
+  },
   cardHeader: {
     backgroundColor: theme.palette.grey[200]
   },
