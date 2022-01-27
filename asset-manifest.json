@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/StoreFront/static/js/main.e61ca10e.js",
+    "main.js": "/StoreFront/static/js/main.cc2119b2.js",
     "index.html": "/StoreFront/index.html",
-    "main.e61ca10e.js.map": "/StoreFront/static/js/main.e61ca10e.js.map"
+    "main.cc2119b2.js.map": "/StoreFront/static/js/main.cc2119b2.js.map"
   },
   "entrypoints": [
-    "static/js/main.e61ca10e.js"
+    "static/js/main.cc2119b2.js"
   ]
 }
