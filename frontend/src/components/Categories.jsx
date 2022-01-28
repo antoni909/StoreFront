@@ -52,7 +52,6 @@ const classes = useStyles()
           ))}
         </>
       </Container>
-      
       <Products />
     </div>
   );

@@ -29,42 +29,41 @@ function Products() {
         </Typography>
         <Grid container spacing={5} alignItems="stretch">
           <Grid item xs={12} sm={6} md={4}>
-            <>
-              {products &&
-                products.productlist.map((item) => (
-                  <>
-                    <Card key={item._id}>
-                      <CardHeader
-                        title={item.name}
-                        titleTypographyProps={{ align: "center" }}
-                        subheader={item.category}
-                      />
-                      <CardMedia
-                        component="img"
-                        height="194"
-                        src={test}
-                        alt="placeholder image"
-                      ></CardMedia>
+            <>{products && products.productlist.map((item) => (
+              <div key={item._id}>
+                <Card>
+                  <CardHeader
+                    title={item.name}
+                    titleTypographyProps={{ align: "center" }}
+                    subheader={item.category}
+                  />
+                  <CardMedia
+                    component="img"
+                    height="194"
+                    src={test}
+                    alt="placeholder image"
+                  ></CardMedia>
 
-                      <CardContent>
-                        <Typography
-                          variant="p"
-                          color="textSecondary"
-                        >
-                          in stock: {item.inStock}
-                        </Typography>
-                        <br />
-                        <Typography
-                          variant="p"
-                          color="textSecondary"
-                        >price: {item.price}
-                        </Typography>
-                      </CardContent>
-                      <ProductsPopover item={item} />
-                    </Card>
+                  <CardContent>
+                    <Typography
+                      variant="h6"
+                      color="textSecondary"
+                    >
+                      in stock: {item.inStock}
+                    </Typography>
                     <br />
-                  </>
-                ))}
+                    <Typography
+                      variant="h6"
+                      color="textSecondary"
+                    >price: {item.price}
+                    </Typography>
+                  </CardContent>
+                  <ProductsPopover item={item} />
+                </Card>
+                <br />
+              </div>
+
+              ))}
             </>
           </Grid>
         </Grid>
