@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from 'uuid';
+import filtered from '../../helpers/createCategories'
 
 const catA = {
   _id: uuidv4(),
@@ -22,7 +23,7 @@ const catC = {
 
 const initialState = {
   activeCategory: '',
-  categoryList: [catA,catB,catC]
+  categoryList: [catA,catB,catC,...filtered]
 }
 
 export const categorySlice = createSlice({

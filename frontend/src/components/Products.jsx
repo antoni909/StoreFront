@@ -1,126 +1,73 @@
-import { useStyles } from "../hooks/useStyles";
-import { useSelector, useDispatch } from "react-redux";
-import { setActiveProduct,selectProducts } from "../features/products/productsSlice";
+import { useSelector } from "react-redux";
+import { selectProducts } from "../features/products/productsSlice";
 import { selectCategories } from "../features/categories/categorySlice";
 
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import ProductsPopover from './ProductsPopover'
 
-import { useState } from "react";
-import Popover from "@mui/material/Popover";
+const test = require('../assets/360x194.png')
 
 function Products() {
-  const classes = useStyles();
   const categories = useSelector(selectCategories);
   const products = useSelector(selectProducts);
-  const dispatch = useDispatch();
-
-
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handleClick = (event,item) => {
-    setAnchorEl(event.currentTarget);
-    console.log('*',event.currentTarget)
-    dispatch(setActiveProduct(item))
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
 
   return (
-    <>
-      <Container maxWidth="md" component="main">
+      <Container align="center" component="main" maxWidth="md">
         <Typography
           component="h1"
           variant="h4"
           align="center"
           color="textPrimary"
           gutterBottom
-        >
-          {categories && categories.activeCategory}
+        >{categories && categories.activeCategory}
         </Typography>
         <Grid container spacing={5} alignItems="stretch">
           <Grid item xs={12} sm={6} md={4}>
-            <>
-              {products &&
-                products.productlist.map((item) => (
-                  <Card key={item._id}>
-                    <CardHeader
-                      title={item.name}
-                      titleTypographyProps={{ align: "center" }}
-                      className={classes.cardHeader}
-                    />
-                    <CardContent>
-                      <Typography 
-                        variant="p" 
-                        color="textPrimary"
-                      >{item.category } 
-                      </Typography>
-                      <Typography 
-                        variant="p" 
-                        color="textSecondary"
-                      >{item.description}
-                      </Typography>
-                    </CardContent>
+            <>{products && products.productlist.map((item) => (
+              <div key={item._id}>
+                <Card>
+                  <CardHeader
+                    title={item.name}
+                    titleTypographyProps={{ align: "center" }}
+                    subheader={item.category}
+                  />
+                  <CardMedia
+                    component="img"
+                    height="194"
+                    src={test}
+                    alt="placeholder image"
+                  ></CardMedia>
 
-                    <CardActions>
-                      <Button
-                        aria-describedby={id}
-                        color="primary"
-                        variant="outlined"
-                        onClick={(e) => handleClick(e,item)}
-                      >
-                        DETAILS
-                      </Button>
-                      <Popover
-                        id={id}
-                        open={open}
-                        anchorEl={anchorEl}
-                        onClose={handleClose}
-                        anchorOrigin={{
-                          vertical: "bottom",
-                          horizontal: "left",
-                        }}
-                      >
-                        <Typography 
-                          sx={{ p: 2 }}
-                        >
-                            {products && products.activeProduct.map((item) => (
-                              <>
-                                <Typography
-                                  key={item._id}
-                                  variant="p" 
-                                  color="textPrimary"
-                                >inStock: {item.inStock}
-                                </Typography>
-                                <Typography
-                                  key={item._id}
-                                  variant="p" 
-                                  color="textPrimary"
-                                  >price:{item.price}
-                                </Typography>
-                              </>
-                            ))}
-                        </Typography>
-                      </Popover>
-                    </CardActions>
-                  </Card>
-                ))}
+                  <CardContent>
+                    <Typography
+                      variant="h6"
+                      color="textSecondary"
+                    >
+                      in stock: {item.inStock}
+                    </Typography>
+                    <br />
+                    <Typography
+                      variant="h6"
+                      color="textSecondary"
+                    >price: {item.price}
+                    </Typography>
+                  </CardContent>
+                  <ProductsPopover item={item} />
+                </Card>
+                <br />
+              </div>
+
+              ))}
             </>
           </Grid>
         </Grid>
       </Container>
-    </>
   );
 }
 

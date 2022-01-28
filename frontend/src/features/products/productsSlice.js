@@ -1,5 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { v4 as uuidv4 } from 'uuid'
+import { listCatsProds } from '../../helpers/createCategories'
+
+// console.log({...listCatsProds})
 
 const list = {
   electronics: [
@@ -54,6 +57,8 @@ const list = {
   ]
 }
 
+const dynamicList = {...list,...listCatsProds}
+
 const initialState = {
   productlist: [],
   activeProduct: []
@@ -67,8 +72,8 @@ export const productsSlice = createSlice({
       state.activeProduct = [action.payload]
     },
     setProductList: (state,action)=> {
-      if(Object.keys(list).includes(action.payload)){
-        state.productlist = [...list[action.payload]]
+      if(Object.keys(dynamicList).includes(action.payload)){
+        state.productlist = [...dynamicList[action.payload]]
       }
       
     },
