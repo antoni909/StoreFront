@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveProduct, selectProducts } from "../features/products/productsSlice";
 import { useState } from "react";
+import { addToCart, updateCartTotals } from "../features/cart/cartSlice"
 
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
@@ -8,9 +9,10 @@ import Popover from "@mui/material/Popover";
 import Typography from "@material-ui/core/Typography";
 
 const ProductsPopover = ({item}) => {
+  // const cart = useSelector(selectCart)
+  const dispatch = useDispatch()
   const products = useSelector(selectProducts);
   const [anchorEl, setAnchorEl] = useState(null);
-  const dispatch = useDispatch();
 
   const handleClick = (event, item) => {
     setAnchorEl(event.currentTarget);
@@ -30,7 +32,7 @@ const ProductsPopover = ({item}) => {
           aria-describedby={id}
           color="primary"
           size="small"
-          variant="contained"
+          variant="text"
           onClick={(e) => handleClick(e, item)}
         >
           info
@@ -46,16 +48,28 @@ const ProductsPopover = ({item}) => {
           }}
         >
           <Typography sx={{ p: 2 }}>
-            {products &&
-              products.activeProduct.map((item) => (
+            {products && products.activeProduct.map((item) => (
                 <>
-                  <Typography key={item._id} variant="p" color="textPrimary">
-                    {item.description}
+                  <Typography 
+                    key={item._id} 
+                    variant="p" 
+                    color="textPrimary"
+                  >{item.description}
                   </Typography>
                 </>
               ))}
           </Typography>
         </Popover>
+        <Button 
+          color="primary"
+          size="small"
+          variant="outlined"
+          onClick={() => {
+            dispatch(addToCart(item))
+            dispatch(updateCartTotals(1))
+          }}
+        > + cart
+        </Button>
       </CardActions>
     </>
   );

@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 
 import Products from './Products'
+import SimpleCart from './SimpleCart'
 
 
 
@@ -52,6 +53,8 @@ const classes = useStyles()
           ))}
         </>
       </Container>
+      <br />
+      <SimpleCart />
       <Products />
     </div>
   );
