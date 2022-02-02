@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveProduct, selectProducts } from "../features/products/productsSlice";
 import { useState } from "react";
-import { addToCart, updateCartTotals } from "../features/cart/cartSlice"
+import { addToCart } from "../features/cart/cartSlice"
 
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
@@ -9,7 +9,6 @@ import Popover from "@mui/material/Popover";
 import Typography from "@material-ui/core/Typography";
 
 const ProductsPopover = ({item}) => {
-  // const cart = useSelector(selectCart)
   const dispatch = useDispatch()
   const products = useSelector(selectProducts);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -60,16 +59,15 @@ const ProductsPopover = ({item}) => {
               ))}
           </Typography>
         </Popover>
+
         <Button 
           color="primary"
           size="small"
           variant="outlined"
-          onClick={() => {
-            dispatch(addToCart(item))
-            dispatch(updateCartTotals(1))
-          }}
+          onClick={() => {dispatch(addToCart(item))}}
         > + cart
         </Button>
+
       </CardActions>
     </>
   );
