@@ -18,7 +18,7 @@ class Category{
 }
 
 const categories = new Category()
-const fakeCats = categories.createSomeCategories(25)
+const fakeCats = categories.createSomeCategories(10)
 const makeUnique = (arr) => {
   const collection = []
   const temp = {}
@@ -61,6 +61,6 @@ const generateProducts = (categories,numProducts) => {
 
   return collection
 }
-export const listCatsProds = generateProducts(filtered,5)
+export const listCatsProds = generateProducts(filtered,3)
 
 export default filtered
