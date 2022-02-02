@@ -10,9 +10,8 @@ import { selectCart } from '../features/cart/cartSlice'
 // remove inStock === count(removed item) + 1
 export default function SimpleCart(){
   const cart = useSelector(selectCart)
-  console.log('SimpleCart: ', cart)
   return(
-    <>Cart: {cart.length}</>
+    <>Cart: {cart && cart.cartTotals}</>
   )
 
 }
