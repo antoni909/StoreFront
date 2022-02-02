@@ -4,7 +4,8 @@ import { createSlice } from '@reduxjs/toolkit'
 // reducer: add the selected item to the cart
 // reducer: adds the product to the arr of items in state
 const initialState = {
-  cartTotals: 0
+  cartTotals: 0,
+  products: {}
 }
 export const cartSlice = createSlice({
 name: 'cart',
@@ -12,7 +13,11 @@ initialState,
 reducers: {
   addToCart: (state,action)=>{
     const name = action.payload.name
-    state[name] = [{...action.payload}]
+    if(state.products[name]){
+      state.products[name] = [...state.products[name],{...action.payload}]
+    }else{
+      state.products[name] = [{...action.payload}]
+    }
   },
   updateCartTotals: (state,action) => {
     state.cartTotals += action.payload

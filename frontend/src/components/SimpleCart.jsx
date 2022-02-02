@@ -1,5 +1,10 @@
+import {useState} from 'react'
 import { useSelector } from 'react-redux'
 import { selectCart } from '../features/cart/cartSlice'
+
+import Button from "@material-ui/core/Button";
+import CartItems from "../components/CartItems";
+
 // note: have an add-to-cart button for each product
 // stretch: remove-from-cart button for each product
 
@@ -8,10 +13,30 @@ import { selectCart } from '../features/cart/cartSlice'
 // count === 0
 // add inStock === count(added item) - 1
 // remove inStock === count(removed item) + 1
-export default function SimpleCart(){
+
+export default function SimpleCart({item}){
   const cart = useSelector(selectCart)
+
+  const [show, setShow] = useState(false)
+
   return(
-    <>Cart: {cart && cart.cartTotals}</>
+    <>
+      <Button
+        color="primary"
+        size="small"
+        variant="outlined"
+        onClick={() => setShow(!show)}
+      >Cart: {cart && cart.cartTotals}
+      </Button>
+      <br />
+      {
+        show
+          ?<>
+            <CartItems />
+           </>
+          :null
+      }
+    </>
   )
 
 }
