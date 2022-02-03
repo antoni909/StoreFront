@@ -2,13 +2,14 @@ import { useStyles } from "../hooks/useStyles";
 import { useSelector, useDispatch } from 'react-redux'
 import { setProductList } from '../features/products/productsSlice'
 import { setActiveCategory, selectCategories } from '../features/categories/categorySlice'
+
+import Card from "@material-ui/core/Card"
 import Container from '@material-ui/core/Container';
+import Grid from "@material-ui/core/Grid"
 import Typography from '@material-ui/core/Typography';
 
 import Products from './Products'
 import SimpleCart from './SimpleCart'
-
-
 
 function Categories() {
 const categories = useSelector(selectCategories)
@@ -16,9 +17,9 @@ const dispatch = useDispatch()
 const classes = useStyles()
 
   return (
-    <div>
+    <>
       <Container 
-        maxWidth="sm" 
+        maxWidth="md" 
         component="main" 
         className={classes.heroContent}
       >
@@ -40,23 +41,34 @@ const classes = useStyles()
           choose a category from below
         </Typography>
         <br />
-        <>{categories && categories.categoryList.map((cat) => (
-                <button 
-                  className={classes.button}
-                  key={cat._id}
-                  onClick={() => {
-                    dispatch(setActiveCategory(cat.name));
-                    dispatch(setProductList(cat.name));
-                  }}
+
+
+        <Grid container spacing={2}>
+          <Grid  item xs={9}>
+            <Card>{categories && categories.categoryList.map((cat) => (
+              <button 
+                className={classes.button}
+                key={cat._id}
+                onClick={() => {
+                  dispatch(setActiveCategory(cat.name));
+                  dispatch(setProductList(cat.name));
+                }}
                 >{cat.name}
-                </button>
-          ))}
-        </>
+              </button>
+              ))}
+            </Card>
+            <br />
+          </Grid>
+
+          <Grid item xs={3}>
+            <SimpleCart />
+          </Grid>
+
+        </Grid>
+
       </Container>
-      <br />
-      <SimpleCart />
       <Products />
-    </div>
+    </>
   );
 }
 

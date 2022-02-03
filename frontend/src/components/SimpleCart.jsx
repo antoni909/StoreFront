@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { selectCart } from '../features/cart/cartSlice'
 
 import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card"
 import CartItems from "../components/CartItems";
 
 export default function SimpleCart(){
@@ -22,9 +23,13 @@ export default function SimpleCart(){
       <br />
       {
         show
-          ?<>
+          ?
+          <>
+           <br />
+           <Card>
             <CartItems />
-           </>
+           </Card>
+          </>
           :null
       }
     </>

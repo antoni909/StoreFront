@@ -17,25 +17,23 @@ function Products() {
   const products = useSelector(selectProducts)
 
   return (
-      <Container align="center" component="main" maxWidth="md">
+      <Container 
+        align="center" 
+        component="main" 
+        maxWidth="md"
+      >
         <Typography
           component="h1"
           variant="h4"
           align="center"
           color="textPrimary"
           gutterBottom
-        >{categories && categories.activeCategory}
+        >{categories && categories.activeCategory}  
         </Typography>
-        <Grid 
-          container 
-          spacing={3}
-          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-        >{products && products.productlist.map((item) => (
-          <Grid 
-            item 
-            xs={4}
-            key={item._id}
-          >
+        <Grid container spacing={3}>
+
+          {products && products.productlist.map((item) => (
+          <Grid item xs={3} key={item._id}>
               <Card>
                 <CardHeader
                   title={item.name}
@@ -47,28 +45,29 @@ function Products() {
                   height="194"
                   src={test}
                   alt="placeholder image"
-                ></CardMedia>
-
+                >
+                </CardMedia>
                 <CardContent>
                   <Typography
                     variant="h6"
                     color="textSecondary"
-                  >
-                    in stock: {item.inStock}
+                  >{`$${item.price}`}
                   </Typography>
-                  <br />
                   <Typography
                     variant="h6"
                     color="textSecondary"
-                  >price: {item.price}
+                  >in stock: {item.inStock}
                   </Typography>
                 </CardContent>
 
                 <ProductsPopover item={item} />
+              
               </Card>
           </Grid>
           ))}
+
         </Grid>
+
       </Container>
   );
 }
