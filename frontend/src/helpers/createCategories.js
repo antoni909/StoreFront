@@ -18,7 +18,7 @@ class Category{
 }
 
 const categories = new Category()
-const fakeCats = categories.createSomeCategories(10)
+const fakeCats = categories.createSomeCategories(100)
 const makeUnique = (arr) => {
   const collection = []
   const temp = {}
@@ -48,7 +48,6 @@ class Product{
     return productsFromCategory
   }
 }
-// 1 category and render multiple products using createSomeProducts
 
 const generateProducts = (categories,numProducts) => {
   const collection = {} 
@@ -61,6 +60,6 @@ const generateProducts = (categories,numProducts) => {
 
   return collection
 }
-export const listCatsProds = generateProducts(filtered,3)
+export const listCatsProds = generateProducts(filtered,15)
 
 export default filtered
