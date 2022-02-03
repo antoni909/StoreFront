@@ -28,10 +28,7 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[200]
   },
   footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    borderTop: `1px solid ${theme.palette.divider}`
   },
   fullHeight: {
     height: "100%"

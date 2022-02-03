@@ -61,6 +61,6 @@ const generateProducts = (categories,numProducts) => {
 
   return collection
 }
-export const listCatsProds = generateProducts(filtered,3)
+export const listCatsProds = generateProducts(filtered,7)
 
 export default filtered
