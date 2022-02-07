@@ -1,14 +1,12 @@
 const express = require('express')
 const app = express()
-const notFoundHandler = require('./404')
-const serverErrorHandler = require('./404')
+const notFoundHandler = require('./handlers/404')
+const serverErrorHandler = require('./handlers/404')
+const main_router = require('./router')
 
 app.use(express.json())
 
-app.get('/',(req,res)=>{
-  const msg = 'hello'
-  res.status(200).send(msg)
-})
+app.use(main_router)
 
 app.use('*',notFoundHandler)
 app.use(serverErrorHandler)

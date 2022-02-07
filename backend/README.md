@@ -8,9 +8,9 @@
 
 > online storefront that will allow our users to browse our product offerings by category, place items in their shopping cart, and check-out when they are ready to make their purchase
 
-### 🏠 [Repo: GitHub](#blank)
+### 🏠 [Repo: GitHub](https://github.com/antoni909/StoreFront/tree/dev/backend)
 
-### ✨ [Demo: GitHub Pages](#blank)
+### ✨ [Heroku](https://storefront-v1.herokuapp.com/)
 
 ## Attributions
 
