@@ -11,6 +11,10 @@
 
 ### ✨ [Demo: GitHub Pages](https://antoni909.github.io/StoreFront/)
 
+### State Management Using Redux Toolkit
+
+![async redux](/frontend/src/assets/asyncRedux.jpeg)
+
 ## Install
 
 ```sh

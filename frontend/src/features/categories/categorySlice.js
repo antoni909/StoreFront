@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import filtered from '../../helpers/createCategories'
 
+// fetch 'filtered' from Server API
+
 const initialState = {
   activeCategory: '',
   categoryList: [...filtered]
