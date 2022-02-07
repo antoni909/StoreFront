@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import Products from './Products'
 import SimpleCart from './SimpleCart'
 
+
 function Categories() {
 const categories = useSelector(selectCategories)
 const dispatch = useDispatch()
