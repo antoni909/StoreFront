@@ -19,6 +19,15 @@ deploy subdirectory to [Heroku](https://github.com/timanovsky/subdir-heroku-buil
 [Deploying subdirectory projects to Heroku
 ](https://jtway.co/deploying-subdirectory-projects-to-heroku-f31ed65f3f2)
 
+## Routes
+
+| Action   |  HTTP Method  |    Resource    |
+|----------|:-------------:|---------------:|
+| GET ALL  |      GET      | /inventory     |
+| add one  |      POST     | /inventory     |
+|update one|      PUT      | /inventory/:id |
+|delete one| right-aligned | /inventory/:id |
+
 ## Install
 
 ```sh

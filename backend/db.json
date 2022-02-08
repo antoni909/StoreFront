@@ -1,0 +1,107 @@
+{  
+   "inventory":
+      [
+         {
+            "categories": {
+               "0": {
+                  "_id": "1af366f4-8abd-4869-8b5d-528e0ef5202b",
+                  "name": "Computers",
+                  "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                  "total": 11
+               },
+               "1": {
+                  "_id": "271c49d1-b98e-43f5-a960-341999d261ad",
+                  "name": "Garden",
+                  "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                  "total": 20
+               },
+               "2": {
+                  "_id": "124f5144-be4a-4357-8975-9c02c51ce80b",
+                  "name": "Kids",
+                  "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                  "total": 35
+               }
+            },
+            "products": {
+               "Computers": [
+                  {
+                     "_id": "17781c07-ae29-4d08-8f2e-67b5a1412e9e",
+                     "category": "Computers",
+                     "name": "Tuna",
+                     "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                     "inStock": 38,
+                     "price": "121.00"
+                  },
+                  {
+                     "_id": "15288d48-16b8-4b3f-b2c5-b4ab9c5744c7",
+                     "category": "Computers",
+                     "name": "Bacon",
+                     "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                     "inStock": 87,
+                     "price": "619.00"
+                  },
+                  {
+                     "_id": "17f6340f-f6eb-4541-95b0-3449c27c3043",
+                     "category": "Computers",
+                     "name": "Pizza",
+                     "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                     "inStock": 32,
+                     "price": "752.00"
+                  }
+               ],
+               "Garden": [
+                  {
+                     "_id": "d7c1479b-7ca6-4b0c-8b60-eedd8b517d2c",
+                     "category": "Garden",
+                     "name": "Keyboard",
+                     "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                     "inStock": 70,
+                     "price": "636.00"
+                  },
+                  {
+                     "_id": "d30acbb4-c692-4a81-adf1-36172234b9cc",
+                     "category": "Garden",
+                     "name": "Bacon",
+                     "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                     "inStock": 9,
+                     "price": "385.00"
+                  },
+                  {
+                     "_id": "2d9f1bc9-7ff0-40e6-853e-ddb506c1cd80",
+                     "category": "Garden",
+                     "name": "Tuna",
+                     "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                     "inStock": 27,
+                     "price": "443.00"
+                  }
+               ],
+               "Kids": [
+                  {
+                     "_id": "d61d730b-55f4-4b74-8fa8-9f5177b077b7",
+                     "category": "Kids",
+                     "name": "Car",
+                     "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                     "inStock": 32,
+                     "price": "26.00"
+                  },
+                  {
+                     "_id": "6e3636b4-1eb4-4cd9-93ca-4a490b476df1",
+                     "category": "Kids",
+                     "name": "Bike",
+                     "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                     "inStock": 69,
+                     "price": "414.00"
+                  },
+                  {
+                     "_id": "49413ec4-114d-4430-89d2-85028c7b098b",
+                     "category": "Kids",
+                     "name": "Mouse",
+                     "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                     "inStock": 78,
+                     "price": "293.00"
+                  }
+               ]
+            }
+         }
+      ]
+}
