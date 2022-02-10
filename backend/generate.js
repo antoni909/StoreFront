@@ -60,6 +60,6 @@ const { faker } = require('@faker-js/faker');
     categories: {...fakeCats_0},
     products: {...fakeProds_0}
   }
-
   const json_inventory = JSON.stringify(inventory)
-  module.exports = json_inventory;
+  console.log(json_inventory)
+  // module.exports = json_inventory;

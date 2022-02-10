@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const notFoundHandler = require('./handlers/404')
 const serverErrorHandler = require('./handlers/404')
-const main_router = require('./router')
+const main_router = require('./routes/router')
 
 app.use(express.json())
 

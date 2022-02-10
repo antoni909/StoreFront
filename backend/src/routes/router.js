@@ -1,6 +1,5 @@
 const express = require('express')
 const main_router = express.Router()
-const json_inventory = require('../generate')
 
 main_router.get('/', greetUser);
 
@@ -14,7 +13,8 @@ async function greetUser(req,res){
   res.status(200).send(message);
 }
 async function getAllInventory(req,res){
-  res.status(200).send(json_inventory)
+  const msg = ' inventory data from db '
+  res.status(200).send(msg)
 }
 async function postOneInInventory(req,res){}
 async function putOneInInventory(req,res){}
