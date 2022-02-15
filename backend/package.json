@@ -4,7 +4,7 @@
   "description": "## Heroku Deployments",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,12 +15,14 @@
     "express": "^4.17.2",
     "jest": "^27.5.0",
     "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
     "sequelize": "^6.15.1",
     "sqlite3": "^5.0.2",
     "supertest": "^6.2.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.0.0-alpha.5"
+    "@faker-js/faker": "^6.0.0-alpha.5",
+    "nodemon": "^2.0.15"
   }
 }
