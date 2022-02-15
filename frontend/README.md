@@ -1,9 +1,4 @@
 <h1 align="center">Welcome to StoreFront (front-end) 👋</h1>
-<p>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="#blank" />
-  </a>
-</p>
 
 > online storefront that will allow our users to browse our product offerings by category, place items in their shopping cart, and check-out when they are ready to make their purchase
 
