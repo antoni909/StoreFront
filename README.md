@@ -8,6 +8,9 @@
 
 ### ✨ [Demo: GitHub Pages](https://antoni909.github.io/StoreFront/)
 
+🚀 [take me to the frontend!](/frontend/README.md)
+🤖 [take me to the backend!](/backend/README.md)
+
 ## Tech Used
 
 FrontEnd:
@@ -18,6 +21,14 @@ FrontEnd:
 - npm
 
 BackEnd:
+
+- [dotenv](#blank)
+- [express](#blank)
+- [faker-js](#blank)
+- [jest](#blank)
+- [nodemon](#blank)
+- [sequelize](#blank)
+- [uuid](#blank)
 
 ## Author
 
