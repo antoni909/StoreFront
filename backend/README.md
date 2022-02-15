@@ -19,14 +19,42 @@ deploy subdirectory to [Heroku](https://github.com/timanovsky/subdir-heroku-buil
 [Deploying subdirectory projects to Heroku
 ](https://jtway.co/deploying-subdirectory-projects-to-heroku-f31ed65f3f2)
 
+## Model
+
+Category Model:
+
+  uuid: string
+  name: string
+  description: string
+  total: int
+  products: array
+
+Product Model:
+  uuid:
+  catId:
+  belongsTo:
+  name:
+  description:
+  numStock:
+  price:
+
 ## Routes
 
-| Action   |  HTTP Method  |    Resource    |
-|----------|:-------------:|---------------:|
-| GET ALL  |      GET      | /inventory     |
-| add one  |      POST     | /inventory     |
-|update one|      PUT      | /inventory/:id |
-|delete one| right-aligned | /inventory/:id |
+|   Action    |  HTTP Method  |      Resource     |     Model     |
+|-------------|:-------------:|-------------------:---------------:
+| READ ALL    |      GET      | /category         |   Category    |
+| READ ONE    |      GET      | /category/:id     |   Category    |
+| CREATE ONE  |      POST     | /category         |   Category    |
+| UPDATE ONE  |      PUT      | /category/:id     |   Category    |
+| DELETE ONE  |      DEL      | /category/:Id     |   Category    |
+| READ ALL    |      GET      | /category/        |   Product     |
+| READ ONE    |      GET      | /category/:id     |   Product     |
+| READ ONE    |      GET      | /category/:catId  |   Product     |
+| CREATE ONE  |      POST     | /category/        |   Product     |
+| UPDATE ONE  |      PUT      | /category/:id     |   Product     |
+| UPDATE ONE  |      PUT      | /category/:catId  |   Product     |
+| DELETE ONE  |      DEL      | /category/:id     |   Product     |
+
 
 ## Install
 
