@@ -8,9 +8,9 @@
 
 > online storefront that will allow our users to browse our product offerings by category, place items in their shopping cart, and check-out when they are ready to make their purchase
 
-### 🏠 [Repo: GitHub](#blank)
+### 🏠 [Repo: GitHub](https://github.com/antoni909/StoreFront/tree/dev/backend)
 
-### ✨ [Demo: GitHub Pages](#blank)
+### ✨ [Heroku](https://storefront-v1.herokuapp.com/)
 
 ## Attributions
 
@@ -18,6 +18,15 @@ deploy subdirectory to [Heroku](https://github.com/timanovsky/subdir-heroku-buil
 
 [Deploying subdirectory projects to Heroku
 ](https://jtway.co/deploying-subdirectory-projects-to-heroku-f31ed65f3f2)
+
+## Routes
+
+| Action   |  HTTP Method  |    Resource    |
+|----------|:-------------:|---------------:|
+| GET ALL  |      GET      | /inventory     |
+| add one  |      POST     | /inventory     |
+|update one|      PUT      | /inventory/:id |
+|delete one| right-aligned | /inventory/:id |
 
 ## Install
 

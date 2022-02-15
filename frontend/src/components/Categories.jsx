@@ -1,7 +1,8 @@
 import { useStyles } from "../hooks/useStyles";
 import { useSelector, useDispatch } from 'react-redux'
-import { setProductList } from '../features/products/productsSlice'
-import { setActiveCategory, selectCategories } from '../features/categories/categorySlice'
+import { fetchProductData,setProductList } from '../features/products/productsSlice'
+import { fetchCategoryData,setActiveCategory, selectCategories } from '../features/categories/categorySlice'
+import { useGetAllInventoryQuery } from '../features/api/apiSlice'
 
 import Card from "@material-ui/core/Card"
 import Container from '@material-ui/core/Container';
@@ -10,12 +11,20 @@ import Typography from '@material-ui/core/Typography';
 
 import Products from './Products'
 import SimpleCart from './SimpleCart'
-
+import { useEffect } from "react";
 
 function Categories() {
 const categories = useSelector(selectCategories)
 const dispatch = useDispatch()
 const classes = useStyles()
+const { data } = useGetAllInventoryQuery()
+
+useEffect(()=>{
+  if(data){
+    dispatch(fetchCategoryData(data))
+    dispatch(fetchProductData(data))
+  }
+},[data])
 
   return (
     <>
@@ -43,10 +52,10 @@ const classes = useStyles()
         </Typography>
         <br />
 
-
         <Grid container spacing={2}>
           <Grid  item xs={9}>
             <Card>{categories && categories.categoryList.map((cat) => (
+
               <button 
                 className={classes.button}
                 key={cat._id}
@@ -54,7 +63,8 @@ const classes = useStyles()
                   dispatch(setActiveCategory(cat.name));
                   dispatch(setProductList(cat.name));
                 }}
-                >{cat.name}
+                >
+                  {cat.name}
               </button>
               ))}
             </Card>

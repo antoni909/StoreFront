@@ -1,25 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
-import filtered from '../../helpers/createCategories'
-
-// fetch 'filtered' from Server API
 
 const initialState = {
   activeCategory: '',
-  categoryList: [...filtered]
+  categoryList: []
 }
 
 export const categorySlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
+    fetchCategoryData: (state,action)=>{
+      const list = Object.values(action.payload[0]['categories'])
+      state.categoryList = [...list]
+    },
     setActiveCategory: (state,action)=>{
-      state.activeCategory = action.payload},
+      state.activeCategory = [...action.payload]},
     addToCategoryList: (state,action)=>{
       state.categoryList.push(action.payload)
     }
   }
 })
 
-export const { setActiveCategory, addToCategoryList } = categorySlice.actions
+export const { fetchCategoryData ,setActiveCategory, addToCategoryList } = categorySlice.actions
 export const selectCategories = (state) => state.categories
 export default categorySlice.reducer
