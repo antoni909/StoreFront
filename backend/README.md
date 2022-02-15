@@ -19,6 +19,25 @@ deploy subdirectory to [Heroku](https://github.com/timanovsky/subdir-heroku-buil
 [Deploying subdirectory projects to Heroku
 ](https://jtway.co/deploying-subdirectory-projects-to-heroku-f31ed65f3f2)
 
+## Model
+
+Category Model:
+
+  uuid: string
+  name: string
+  description: string
+  total: int
+  products: array
+
+Product Model:
+  uuid:
+  catId:
+  belongsTo:
+  name:
+  description:
+  numStock:
+  price:
+
 ## Routes
 
 |   Action    |  HTTP Method  |      Resource     |     Model     |
