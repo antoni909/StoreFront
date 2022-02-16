@@ -3,7 +3,7 @@ import axios from 'axios'
 const service = {
 getAllCategories : async () => {
   try{
-    const categories = await axios.get('/categories')
+    const categories = await axios.get('http://localhost:3000/categories')
     return categories
   }catch(e){
     console.log('ERR getAllCategories',e)
@@ -12,6 +12,7 @@ getAllCategories : async () => {
 getCategory : () => {},
 updateCategoryById : () => {},
 deleteCategory : () => {},
+
 getAllProducts : () => {},
 getProductById : () => {},
 getProductCatId : () => {},

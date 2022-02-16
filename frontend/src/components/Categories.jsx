@@ -2,7 +2,8 @@ import { useStyles } from "../hooks/useStyles";
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchProductData,setProductList } from '../features/products/productsSlice'
 import { fetchCategoryData,setActiveCategory, selectCategories } from '../features/categories/categorySlice'
-import { useGetAllInventoryQuery } from '../features/api/apiSlice'
+// import { useGetAllInventoryQuery } from '../features/api/apiSlice'
+import { readAllCategories } from '../features/api/api_categorySlice'
 
 import Card from "@material-ui/core/Card"
 import Container from '@material-ui/core/Container';
@@ -17,14 +18,15 @@ function Categories() {
 const categories = useSelector(selectCategories)
 const dispatch = useDispatch()
 const classes = useStyles()
-const { data } = useGetAllInventoryQuery()
+// const { data } = useGetAllInventoryQuery()
 
 useEffect(()=>{
-  if(data){
-    dispatch(fetchCategoryData(data))
-    dispatch(fetchProductData(data))
-  }
-},[data])
+  dispatch(readAllCategories())
+  // if(data){
+  //   dispatch(fetchCategoryData(data))
+  //   dispatch(fetchProductData(data))
+  // }
+},[dispatch])
 
   return (
     <>
