@@ -3,7 +3,6 @@ const app = express()
 const notFoundHandler = require('./handlers/404')
 const serverErrorHandler = require('./handlers/404')
 const routes = require('./routes/router')
-
 app.use(express.json())
 
 app.use(routes)

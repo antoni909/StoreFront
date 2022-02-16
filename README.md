@@ -15,20 +15,21 @@
 
 FrontEnd:
 
+- [Material UI](https://mui.com/)
 - [React](https://reactjs.org/docs/create-a-new-react-app.html)
 - [Redux-Toolkit](https://redux-toolkit.js.org/introduction/getting-started)
 - [readme-md-generator](https://github.com/kefranabg/readme-md-generator)
-- npm
+- [npm](https://www.npmjs.com/)
 
 BackEnd:
 
-- [dotenv](#blank)
-- [express](#blank)
-- [faker-js](#blank)
-- [jest](#blank)
-- [nodemon](#blank)
-- [sequelize](#blank)
-- [uuid](#blank)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [express](https://expressjs.com/)
+- [faker-js](https://www.npmjs.com/@faker-js/faker)
+- [jest](https://www.npmjs.com/package/jest)
+- [nodemon](https://www.npmjs.com/package/nodemon)
+- [sequelize](https://sequelize.org/v6/index.html)
+- [uuid](https://www.npmjs.com/package/uuid)
 
 ## Author
 
