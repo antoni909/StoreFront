@@ -25,7 +25,6 @@ const ProductsPopover = ({item}) => {
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
-  console.log(categories)
   return (
     <>
       <CardActions>
