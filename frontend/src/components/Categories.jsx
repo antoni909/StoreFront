@@ -1,8 +1,7 @@
+import { useEffect } from "react";
 import { useStyles } from "../hooks/useStyles";
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchProductData,setProductList } from '../features/products/productsSlice'
-import { fetchCategoryData,setActiveCategory, selectCategories } from '../features/categories/categorySlice'
-import { useGetAllInventoryQuery } from '../features/api/apiSlice'
+import { readAllCategories, setActiveCategory, selectCategories, setActiveProduct } from '../features/categories/categorySlice'
 
 import Card from "@material-ui/core/Card"
 import Container from '@material-ui/core/Container';
@@ -11,20 +10,15 @@ import Typography from '@material-ui/core/Typography';
 
 import Products from './Products'
 import SimpleCart from './SimpleCart'
-import { useEffect } from "react";
 
 function Categories() {
 const categories = useSelector(selectCategories)
 const dispatch = useDispatch()
 const classes = useStyles()
-const { data } = useGetAllInventoryQuery()
 
-useEffect(()=>{
-  if(data){
-    dispatch(fetchCategoryData(data))
-    dispatch(fetchProductData(data))
-  }
-},[data])
+useEffect(() => {
+  dispatch(readAllCategories())
+},[dispatch])
 
   return (
     <>
@@ -55,16 +49,15 @@ useEffect(()=>{
         <Grid container spacing={2}>
           <Grid  item xs={9}>
             <Card>{categories && categories.categoryList.map((cat) => (
-
-              <button 
+              <button key={cat.id}
                 className={classes.button}
-                key={cat._id}
                 onClick={() => {
-                  dispatch(setActiveCategory(cat.name));
-                  dispatch(setProductList(cat.name));
+                  dispatch(setActiveCategory(
+                    {catId:cat.id,catName:cat.name}
+                  ));
+                  dispatch(setActiveProduct({catId:cat.id,catName:cat.name}))
                 }}
-                >
-                  {cat.name}
+                > {cat.name}
               </button>
               ))}
             </Card>

@@ -34,21 +34,26 @@ Product Model:
 
 ## Routes
 
-|   Action    |  HTTP Method  |      Resource     |     Model     |
-|-------------|:-------------:|-------------------:---------------:
-| READ ALL    |      GET      | /category         |   Category    |
-| READ ONE    |      GET      | /category/:id     |   Category    |
-| CREATE ONE  |      POST     | /category         |   Category    |
-| UPDATE ONE  |      PUT      | /category/:id     |   Category    |
-| DELETE ONE  |      DEL      | /category/:Id     |   Category    |
-| READ ALL    |      GET      | /category/        |   Product     |
-| READ ONE    |      GET      | /category/:id     |   Product     |
-| READ ONE    |      GET      | /category/:catId  |   Product     |
-| CREATE ONE  |      POST     | /category/        |   Product     |
-| UPDATE ONE  |      PUT      | /category/:id     |   Product     |
-| UPDATE ONE  |      PUT      | /category/:catId  |   Product     |
-| DELETE ONE  |      DEL      | /category/:id     |   Product     |
+### Category Model
 
+|   Action    |  HTTP Method  |      Resource     |
+|-------------|:-------------:|:------------------|
+| READ ALL    |      GET      | /categories       |
+| READ ONE    |      GET      | /categories/:id   |
+| CREATE ONE  |      POST     | /categories       |
+| UPDATE ONE  |      PUT      | /categories/:id   |
+| DELETE ONE  |      DEL      | /categories/:Id   |
+
+### Product Model
+
+|  Action     |  HTTP Method  |      Resource     |
+|-------------|:-------------:|:------------------|
+| READ ALL    |      GET      | /products         |
+| READ ONE    |      GET      | /products/:id     |
+| READ ONE    |      GET      | /products/:catId  |
+| CREATE ONE  |      POST     | /products/        |
+| UPDATE ONE  |      PUT      | /products/:id     |
+| DELETE ONE  |      DEL      | /products/:id     |
 
 ## Install
 

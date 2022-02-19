@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setActiveProduct, selectProducts } from "../features/products/productsSlice";
+import { setActiveProduct, selectCategories } from "../features/categories/categorySlice";
 import { useState } from "react";
 import { addToCart } from "../features/cart/cartSlice"
 
@@ -9,8 +9,9 @@ import Popover from "@mui/material/Popover";
 import Typography from "@material-ui/core/Typography";
 
 const ProductsPopover = ({item}) => {
+
   const dispatch = useDispatch()
-  const products = useSelector(selectProducts);
+  const categories = useSelector(selectCategories);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event, item) => {
@@ -46,18 +47,15 @@ const ProductsPopover = ({item}) => {
             horizontal: "center",
           }}
         >
-          <Typography sx={{ p: 2 }}>
-            {products && products.activeProduct.map((item) => (
-                <>
-                  <Typography 
-                    key={item._id} 
-                    variant="p" 
-                    color="textPrimary"
-                  >{item.description}
-                  </Typography>
-                </>
-              ))}
-          </Typography>
+        <Typography sx={{ p: 2 }}>
+          {categories && categories.activeProduct.map((item,idx) => (
+            <li key={idx} 
+              variant="body1" 
+              color="textPrimary"
+            >{item.description}
+            </li>
+            ))}
+        </Typography>
         </Popover>
 
         <Button 

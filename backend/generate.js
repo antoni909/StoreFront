@@ -61,5 +61,4 @@ const { faker } = require('@faker-js/faker');
     products: {...fakeProds_0}
   }
   const json_inventory = JSON.stringify(inventory)
-  console.log(json_inventory)
   // module.exports = json_inventory;
