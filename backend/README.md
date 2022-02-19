@@ -29,7 +29,7 @@ Category Model:
   products: array
 
   | id | name | description | createdAt | updatedAt |
-  |----|-------|-------------|-----------|----------|
+  |----|------|-------------|-----------|-----------|
 
 Product Model:
   uuid:string
