@@ -15,6 +15,11 @@ deploy subdirectory to [Heroku](https://github.com/timanovsky/subdir-heroku-buil
 
 ## Model
 
+Sequelize PSQL Associations:
+
+  category has many products(1:m), Category.hasMany(Product)
+  product has one category(1:1),   Product.belongsTo(Category)
+
 Category Model:
 
   uuid: string
@@ -23,19 +28,21 @@ Category Model:
   total: int
   products: array
 
+  | id | name | description | createdAt | updatedAt |
+  |----|------|-------------|-----------|-----------|
+
 Product Model:
-  uuid:
-  catId:
-  belongsTo:
-  name:
-  description:
-  numStock:
-  price:
+  uuid:string
+  catId:string
+  name:string
+  description:text
+  numStock:int
+  price:int
 
-## Models
+  | id | name | catId | description | numStock | price | createdAt | updatedAt |
+  |----|------|-------|-------------|----------|-------|-----------|-----------|
 
-
-## Routes 
+## Routes
 
 Category Routes
 
