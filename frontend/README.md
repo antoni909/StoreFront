@@ -10,6 +10,10 @@
 
 ![async redux](/frontend/src/assets/asyncRedux.jpeg)
 
+## React Component Data Flow
+
+![uml](/frontend/src/assets/frontend_uml.jpeg)
+
 ## Install
 
 ```sh
