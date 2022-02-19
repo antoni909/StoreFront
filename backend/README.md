@@ -32,9 +32,12 @@ Product Model:
   numStock:
   price:
 
-## Routes
+## Models
 
-### Category Model
+
+## Routes 
+
+Category Routes
 
 |   Action    |  HTTP Method  |      Resource     |
 |-------------|:-------------:|:------------------|
@@ -44,8 +47,7 @@ Product Model:
 | UPDATE ONE  |      PUT      | /categories/:id   |
 | DELETE ONE  |      DEL      | /categories/:Id   |
 
-### Product Model
-
+Product Routes
 |  Action     |  HTTP Method  |      Resource     |
 |-------------|:-------------:|:------------------|
 | READ ALL    |      GET      | /products         |
